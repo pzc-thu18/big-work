@@ -5,13 +5,13 @@
 #include <vector>
 
 class Table {
-	//行数
+	//琛屾暟
 	int row_num = 0;
-	//属性数
+	//灞炴�ф暟
 	int items = 0;
-	//数据信息:名字+类型
+	//鏁版嵁淇℃伅:鍚嶅瓧+绫诲瀷
 	std::vector< std::pair<std::string,std::string> > attr;
-	//具体信息,全部存成string,不同属性用','间隔
+	//鍏蜂綋淇℃伅,鍏ㄩ儴瀛樻垚string,涓嶅悓灞炴�х敤','闂撮殧
 	std::list<std::string> rows;
 	//KEY
 	int key = -1;
@@ -20,4 +20,10 @@ class Table {
 public:
 	void init(std::string & _info);
 	void addData(std::string & _info);
+	void show_table_info(){
+		for(int i=0;i<items;i++){
+			std::cout<<attr[i].first<<" "<<attr[i].second<<" "<<std::endl;
+		}
+		std::cout<<key<<std::endl;
+	}
 };
